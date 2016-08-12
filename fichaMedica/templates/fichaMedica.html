@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block referens %}
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link href="/static/css/boton.css" rel="stylesheet" type="text/css" media="screen" />
+{#    <link href="/static/css/tabstyle.css" rel="stylesheet" />#}
+
+{% endblock %}
+
+{% block title %}
+    Ficha-Medica
+{% endblock %}
+
+
+{% block content %}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-10">
+                <div class="card">
+					{% if doctor %}
+                        <div class="content">
+                            <h3> Historial Clinico</h3>
+
+
+                            <ul class="nav nav-pills">
+                              <li><a href="{% url 'enfermedades' paciente.id %}">Enfermedades</a></li>
+                              <li><a href="{% url 'cirujias' paciente.id %}">Cirujias</a></li>
+                              <li><a href="{% url 'alergias' paciente.id %}">Alergias</a></li>
+                              <li><a href="{% url 'tratamientos' paciente.id %}">Tratamientos</a></li>
+                            </ul>
+
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-lg-10">
+                <div class="card">
+                    <div class="content">
+
+                        {% block tabsFichaMedica %}
+
+                        <h3>Que es?</h3>
+                        <p>Una ficha médica es un documento en el que el médico registra los datos y circunstancias <br> que guardan sus pacientes.</p><br>
+                        <p>Todo paciente o usuario tiene <strong>derecho a que quede constancia, por escrito</strong> o en el soporte <br>técnico más adecuado,
+                            <strong>de la información obtenida en todos sus procesos asistenciales,<br></strong> realizados por el servicio de salud tanto en el
+                            ámbito de atención primaria como de atención <br>especializada. La historia clínica engloba todos los procesos asistenciales sanitarios
+                            en la <br> vida  del paciente.</p>
+
+                        {% endblock %}
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+	</div>
+</div>
+
+
+
+
+{#    <script>#}
+{#function openCity(evt, cityName) {#}
+{#    var i, tabcontent, tablinks;#}
+{#    tabcontent = document.getElementsByClassName("tabcontent");#}
+{#    for (i = 0; i < tabcontent.length; i++) {#}
+{#        tabcontent[i].style.display = "none";#}
+{#    }#}
+{#    tablinks = document.getElementsByClassName("tablinks");#}
+{#    for (i = 0; i < tablinks.length; i++) {#}
+{#        tablinks[i].className = tablinks[i].className.replace(" active", "");#}
+{#    }#}
+{#    document.getElementById(cityName).style.display = "block";#}
+{#    evt.currentTarget.className += " active";#}
+{#}#}
+{#</script>#}
+
+
+{% endblock %}

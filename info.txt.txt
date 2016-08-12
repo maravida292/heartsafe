@@ -1,0 +1,32 @@
+////PROYECTO DESARROLLADO POR: Martha Villacís////
+Apps_name:
+	Corazon
+	Notification
+	gmaps
+	fichaMedica
+
+Virtualizador_name: myvenv
+
+Proyecto_name: "Proyecto"
+
+Iniciar proyecto---> dentro de la carpeta donde esta el manage escribir el sigt comando
+		     python manage.py runserver
+
+Iniciar virtualizador --> myvenv\Scripts\activate (windows)
+			  source myvenv/bin/activate (linux)
+
+Hacer migraciones --->  python manage.py makemigrations
+			python manage.py migrate
+
+Crae super usuario --->  python manage.py createsuperuser
+
+
+
+
+
+////////////////////CAMBIOS////////////////////////////
+con el print("Hola") en windows 
+print "Hola" en linux
+
+__unicode__ en linux y si usas python2
+__str__ en windows si tiene instalado python2 y python3
