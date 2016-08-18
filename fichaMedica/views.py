@@ -1,4 +1,5 @@
 from django.shortcuts import render, render_to_response, redirect
+from django.template import RequestContext
 from django.contrib.auth.models import User
 from .models import *
 from Corazon.models import *
@@ -11,9 +12,8 @@ from fichaMedica.forms import *
 #'A', 'Alergias'
 
 
-def ficha_medica_tipo(request, id_pac, tipoFicha):
+def registrar_ficha_medica_tipo(request, id_pac, tipoFicha):
 	userActual = request.user
-
 	if userActual.groups.filter(name='Doctores').exists():
 		doctor = Doctor.objects.get(id=userActual.doctor.id)
 	paciente = Paciente.objects.get(id=id_pac)
@@ -57,12 +57,25 @@ def ficha_medica_tipo(request, id_pac, tipoFicha):
 
 
 
-
 def ficha_medica(request, id_pac):
 	userActual = request.user
 	if userActual.groups.filter(name='Doctores').exists():
 		doctor = Doctor.objects.get(id=userActual.doctor.id)
 	paciente = Paciente.objects.get(id=id_pac)
-
-
 	return render (request, "fichaMedica.html", {'paciente' : paciente, 'doctor': doctor})
+
+
+def ver_update_ficha(request, id_pac):
+	paciente1 = FichaMedica.objects.get(id=id_pac)
+	ficha1 = FichaMedica.objects.get(id=11)
+	if request.method == "POST":
+		form = ficha_MedicaForm(request.POST, instance=ficha1)
+		if form.is_valid():
+			form.save()
+			return redirect('administrador')
+	else:
+		form = ficha_MedicaForm(instance=ficha1)
+	context = {'form': form}
+	return render_to_response("verFichaMedica.html", context, context_instance=RequestContext(request))
+
+

@@ -38,19 +38,15 @@ function localizacionPaciente() {
                       marker.setMap(null);
                   }
 
-
                   marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(parseFloat(dispo.lat), parseFloat(dispo.lng)),
-                    map: mapglobal,
-                    animation: google.maps.Animation.BOUNCE,
-                    icon:src="/static/img/corazon_peq.png",
+                      position: new google.maps.LatLng(parseFloat(dispo.lat), parseFloat(dispo.lng)),
+                      map: mapglobal,
+                      animation: google.maps.Animation.BOUNCE,
+                      icon:src="/static/img/corazon_peq.png",
                   });
 
                   entra = true;
-
-
-
-
+                  
 
                   //$( ".result" ).html( data );
                   console.log(data);

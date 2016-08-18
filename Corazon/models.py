@@ -33,7 +33,7 @@ class Doctor(models.Model):
 		)
 
 	def __unicode__(self):# __str__ para python3 y cuando esta instalado los 2 python
-		return self.usuario.username
+		return '%s %s (%s)' % (self.usuario.first_name, self.usuario.last_name, self.usuario.username)
 
 	def save(self, *args, **kwargs):
 		if not self.id:

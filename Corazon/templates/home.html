@@ -3,6 +3,24 @@
 
 {% block referens %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="/static/js/demo.js"></script>
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+
+            demo.initChartist();
+
+            $.notify({
+                icon: 'pe-7s-info',
+                message: "Bienvenido a <b>Safe System</b> - donde podra saber el estado de su corazón."
+
+            },{
+                type: 'info',
+                timer: 1000
+            });
+
+        });
+         </script>
 {% endblock %}
 
 
@@ -26,7 +44,6 @@
                         
                         left:60px }
                       </style>
-
 
 
         +++++EMPIEZA EL CODIGO+++++
@@ -73,11 +90,37 @@
                     <!--   Termina Codigo   -->
 
                 </div>
+
+
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <div class="row">
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+                </div>
             </div>
         </div>
     </div>
 </div>
-    {% endblock %}
+{% endblock %}
 
 
 
@@ -85,23 +128,6 @@
     <!--   Codigo que permite mostrar un mensaje por 10 segundos ahahha xD!!!!!  jQuery plugin for alert notification-->
     {% block javascrip %}
 
-    <script src="/static/js/demo.js"></script>
 
-        <script type="text/javascript">
-        $(document).ready(function(){
-
-            demo.initChartist();
-
-            $.notify({
-                icon: 'pe-7s-info',
-                message: "Bienvenido a <b>Safe System</b> - donde podra saber el estado de su corazón."
-
-            },{
-                type: 'info',
-                timer: 1000
-            });
-
-        });
-         </script>
 
     {% endblock %}

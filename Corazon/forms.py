@@ -3,6 +3,7 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from .models import Doctor, Paciente
+from gmaps.models import Device
 
 
 #Piensa en las clases Field como las encargadas de la logica de 
@@ -60,6 +61,7 @@ class PacienteForm(UserCreationForm):
 		widget=forms.TextInput())
 	nacionalidad = forms.CharField(max_length=40, required=False,widget=forms.TextInput())
 	doctor1 = forms.ModelChoiceField(queryset=Doctor.objects.all())
+	device1 = forms.ModelChoiceField(required=False, queryset=Device.objects.filter(ocupado=False))
 
 	def clean_cedula(self):
 		cedula = self.cleaned_data.get('cedula')
@@ -113,11 +115,7 @@ class PacienteForm2(forms.ModelForm):
 
 
 class PacienteFormDOC(forms.ModelForm):
-
-	# def __init__(self, *args, **kwargs):
-	# 	super(PacienteFormDOC, self).__init__(*args, **kwargs)
-	# 	self.fields['cedula'].widget.attrs['disabled'] = 'disabled' 
-
+	device1 = forms.ModelChoiceField(required=False, queryset=Device.objects.filter(ocupado=False), help_text='Verificar si exite algun dispositivo')
 	class Meta:
 		model   = Paciente
 		fields = ['sexo','edad','telefono','estado_civil', 'nacionalidad', 'foto']
@@ -133,5 +131,4 @@ class DoctorForm2(UserCreationForm):
 
 class LoginForm(forms.Form):
 	username = forms.CharField(widget=forms.TextInput(), label='Usuario')
-	password = forms.CharField(widget=forms.PasswordInput(render_value=False), label='Contraseña' )
-	#password = forms.CharField(label="", widget=forms.PasswordInput(render_value=False))
+	password = forms.CharField(widget=forms.PasswordInput(render_value=False), label='Contraseña')

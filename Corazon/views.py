@@ -14,12 +14,13 @@ from django.contrib.auth.decorators import permission_required
 
 #Importacion de los modelos
 from eventlog.models import Log
+from gmaps.models import Device
 from django.contrib.auth.models import User
 from django.contrib.auth.models import Group
 from django.contrib import messages
 from django.contrib.auth import login,logout,authenticate
 from .models import *
-from .forms import DoctorForm, PacienteForm, FormularioContactos, PacienteForm2, LoginForm, PacienteFormDOC, FormMail, userForm
+from .forms import *
 
 
 #@permission_required('Corazon.delete_doctor')
@@ -37,14 +38,14 @@ def IndexHome(request):
 
 def IndexDoctor(request):
 	user = request.user
-	if user.groups.filter(name='Doctores').exists():
-		doc = Doctor.objects.get(id= user.doctor.id)
-		context = { "doctor" : doc}
-	else:
-		#print user.paciente.doctor1.id
-		doc = Doctor.objects.get(id = user.paciente.doctor1.id)
-		context = { "doctor" : doc}
-	return render(request, "doctor.html", context)
+	if request.user.is_authenticated():
+		if user.groups.filter(name='Doctores').exists():
+			doc = Doctor.objects.get(id= user.doctor.id)
+			return render(request, "doctor.html", { "doctor" : doc})
+		if user.groups.filter(name='Pacientes').exists():
+			doc = Doctor.objects.get(id = user.paciente.doctor1.id)
+			return render(request, "doctor.html",{ "doctor" : doc})
+	return redirect("administrador")
 
 
 def IndexMapa(request):    
@@ -72,14 +73,35 @@ def mostrarPD(request):
 	doctores = Doctor.objects.all()
 	pacientes = Paciente.objects.all()
 	logs = Log.objects.all()
+	devices = Device.objects.all()
 
 	context = {
 		"referencia": "/corazon/registrar_doc",
 		"doctores": doctores,
 		"pacientes": pacientes,
 		"logs": logs,
+		"devices": devices,
 		}
 	return render(request, "administrador.html",context)
+
+
+
+def IndexPaciente(request):		#FUNCION Muestra Pacientes del doctor LOGONEADO o Muestra info del Paciente :)
+	user = request.user
+	if request.user.is_authenticated():
+		if user.groups.filter(name='Doctores').exists():
+			doc = Doctor.objects.get(id= user.doctor.id)
+			lista_paciente = doc.paciente_set.all() #LISTA DE PACIENTES DEL DOCTOR LOGONEADO
+			mensaje = "Lista de pacientes:"
+			context = {	"pacientes": lista_paciente, "mensaje" : mensaje,}
+			pagina = "paciente.html"
+			return render(request, pagina ,context)
+		if user.groups.filter(name='Pacientes').exists():
+			pagina = "paciente_ver.html"
+			paciente1 = Paciente.objects.get(id=user.paciente.id)
+			context = { "paciente" : paciente1}
+			return render(request, pagina ,context)
+		return redirect("administrador") #Se redirige a la url q tiene como nombre "administrador"
 
 
 
@@ -149,14 +171,17 @@ def RegistrarPaciente(request):
 		p1.usuario = instancia
 		p1.cedula = cd.get("cedula")
 		p1.sexo = cd.get("sexo")
-		print(cd.get("sexo"))
-		print(p1.sexo)
 		p1.edad = cd.get("edad")
 		p1.telefono = cd.get("telefono")
 		p1.estado_civil = cd.get("estado_civil")
 		p1.nacionalidad = cd.get("nacionalidad")
 		p1.doctor1 = cd.get("doctor1")
+		p1.device1 = cd.get("device1")
 		p1.save()
+
+		device = Device.objects.get(id =p1.device1.id)
+		device.ocupado = True
+		device.save()
 
 		user=User.objects.get(username=instancia)
 		user.first_name = cd.get("nombre")	
@@ -173,33 +198,10 @@ def RegistrarPaciente(request):
 	return render(request, "registrar.html", context)
 
 
-
-def IndexPaciente(request):		#FUNCION Muestra Pacientes del doctor LOGONEADO o Muestra info del Paciente :)
-	user = request.user
-
-	if request.user.is_authenticated():
-		if user.groups.filter(name='Doctores').exists():
-			doc = Doctor.objects.get(id= user.doctor.id) 
-			lista_paciente = doc.paciente_set.all() #LISTA DE PACIENTES DEL DOCTOR LOGONEADO
-			mensaje = "Lista de pacientes:"
-			context = {	"pacientes": lista_paciente, "mensaje" : mensaje,}
-			pagina = "paciente.html"
-			return render(request, pagina ,context)
-		if user.groups.filter(name='Pacientes').exists():
-			pagina = "paciente_ver.html"
-			paciente1 = Paciente.objects.get(id=user.paciente.id)
-			context = { "paciente" : paciente1}
-			return render(request, pagina ,context)
-		return redirect("administrador") #Se redirige a la url q tiene como nombre ¨administrador¨
-
-
-
-
 def editPaciente(request, id_prod):
 	paciente1 = Paciente.objects.get(id=id_prod)
 	user1 = User.objects.get(id=paciente1.usuario.id)
 	titulo = "Paciente"
-	info = "Iniciando"
 
 	if request.method == "POST":
 		form = PacienteFormDOC(request.POST,request.FILES,instance=paciente1)
@@ -207,12 +209,11 @@ def editPaciente(request, id_prod):
 		if all([form.is_valid(), form2.is_valid()]):
 			form.save()# Guardamos el objeto paciente
 			form2.save()# Guardamos el objeto usuario
-			info = "Correcto"
 			return HttpResponseRedirect('/corazon/paciente/')
 	else:
 		form = PacienteFormDOC(instance=paciente1)
 		form2 = userForm(instance=user1)
-	context = {'form':form, 'form2':form2,'informacion':info, 'titulo':titulo}
+	context = {'form':form, 'form2':form2,'titulo':titulo}
 	return render_to_response("paciente_edit.html",context,context_instance=RequestContext(request))
 
 
@@ -221,7 +222,6 @@ def editPacientDoc(request, id_prod, model, formulario):
 	item = model.objects.get(id=idPaciente)
 	user1 = User.objects.get(id=item.usuario.id)
 	titulo = "Doctor"
-	info = "Iniciando"
 
 	if request.method == "POST":
 		form = formulario(request.POST, request.FILES, instance=item)
@@ -229,12 +229,11 @@ def editPacientDoc(request, id_prod, model, formulario):
 		if all([form.is_valid(), form2.is_valid()]):
 			form.save()#Guardamos objeto
 			form2.save()#Guardamos objeto
-			info = "Correcto"
 			return HttpResponseRedirect('/corazon/paciente/')
 	else:
 		form = formulario(instance=item)
 		form2 = userForm(instance=user1)
-	context = {'form':form, 'form2':form2,'informacion':info, 'titulo':titulo}
+	context = {'form':form, 'form2':form2, 'titulo':titulo}
 	return render_to_response("paciente_edit.html",context,context_instance=RequestContext(request))
 
 
@@ -249,13 +248,13 @@ def deletePD(request, id_item, model):
 			log(user=usuario, action='ELIMINAR DOCTOR', extra={"Usuario_Eliminado": user.username, "Quien_lo_elimino": usuario.username})
 		user.delete()
 		return redirect('administrador') #Se redirige a la url q tiene como nombre ¨administrador¨
-	return render(request, 'deletePD.html', {'item_eliminar':item_eliminar})
+	return render(request, 'deletePD.html', {'item_eliminar':item_eliminar.usuario})
 
 
-def verPacienteDeUnID(request, id_prod):
+def verPacienteDeUnID(request, id_prod):	#Cuenta-Paciente
 	idPaciente = int(id_prod)
 	paciente1 = Paciente.objects.get(id=idPaciente)
-	ctx = {'paciente':paciente1,}
+	ctx = {'paciente':paciente1}
 	return render(request,"paciente_ver.html", ctx)
 
 def enviarMailPac(request, id_pac):
@@ -332,14 +331,15 @@ def login_view(request):
 						return HttpResponseRedirect(next)# a la raiz
 					print ("fuera del next")
 					return HttpResponseRedirect('/corazon/home/')
-
 				else:
 					mensaje = "Usuario y/o password incorrecto"
-					print (mensaje)
-					return render(request,'login.html', {'form': form, 'mensaje' : mensaje})
+					return render(request, 'login.html', {'form': form, 'mensaje': mensaje})
+			else:
+				mensaje = "Ingrese un usuario valido"
+				return render(request,'login.html', {'form': form, 'mensaje' : mensaje})
+
 		#Metodo GET
 		else:
-			#print "La url es %s" %next
 			form = LoginForm()
 			ctx = {'form':form,'next': next}
 			return render_to_response('login.html', ctx, context_instance=RequestContext(request))

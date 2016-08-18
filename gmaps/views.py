@@ -3,11 +3,19 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 from django.template import RequestContext
 from django.contrib.auth.decorators import login_required
-from gmaps.models import *
-from Corazon.models import Paciente
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.http import JsonResponse
+from django.contrib import messages
 import json
+
+
+#Importacion de los modelos
+from eventlog.models import log
+from gmaps.models import Device
+from gmaps.forms import *
+from Corazon.models import Paciente
+
+
 
 @login_required
 def verMapa(request, id_pac):
@@ -19,7 +27,7 @@ def verGrafica(request):
 
 
 @csrf_exempt
-def create_Data(request):##Funcion para mandar los datos sensados del corazon y la ubicacion
+def create_Data(request):##Funcion para receptar los datos sensados del corazon y la ubicacion
 	"""
 	BPM, LATITUD, LONGITUD :param request:
 	JSON :return:
@@ -65,3 +73,45 @@ def get_lng(request, id_pac):#Funcion para obtener lista de ubicacion JSON del m
 		lng = float(x.lng),
 		), ubicacion_por_paciente)
 	return HttpResponse(json.dumps(ubicacion_list), content_type='application/json')
+
+
+def createDevice(request):
+	if request.method == 'POST':
+		form = DeviceForm(request.POST or None)
+		if form.is_valid():
+			form.save()
+			messages.add_message(request, messages.INFO, 'DEVICE AGREGADO CON EXITO.')
+			context = {"titulo": "Crear Device"}
+		else:
+			context = {"titulo": "Crear Device", "form": form}
+	else:  # GET
+		form = DeviceForm()
+		context = {"titulo": "Crear Device", "form": form}
+	return render(request, "registrar.html", context)
+
+
+def editDevice(request, id_device):
+	device = Device.objects.get(id=id_device)
+	if request.method == 'POST':
+		form = DeviceForm(request.POST, request.FILES, instance=device)
+		if (form.is_valid()):
+			form.save()
+			return redirect('administrador')
+	else:
+		form = DeviceForm(instance=device)
+	context = {'form': form,'titulo': "Dispositivo"}
+	return render_to_response("paciente_edit.html", context, context_instance=RequestContext(request))
+
+
+
+def deleteDevice(request, id_device):
+	usuario = request.user
+	device = Device.objects.get(id=id_device)
+	if request.method == 'POST':
+		log(user=usuario, action='ELIMINAR DEVICE',
+			extra={"Device_Eliminado": device.nombre, "Quien_lo_elimino": usuario.username})
+		device.delete()
+		return redirect('administrador')  # Se redirige a la url q tiene como nombre administrador
+	return render(request, 'deletePD.html', {'item_eliminar': device.nombre})
+
+
