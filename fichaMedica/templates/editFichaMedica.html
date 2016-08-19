@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block referens %}
+{% endblock %}
+
+
+{% block title %}
+    Ficha Medica
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Ficha Medica - Paciente</h4>
+                    </div>
+                    <div class="content">
+                        <form method="POST">{% csrf_token %}
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Detalles</label>
+                                        <textarea rows="4" class="form-control" id="id_detalles" placeholder="Here can be your description" name="detalles">{{ form.detalles.value }}</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Descripción</label>
+                                        <textarea rows="4" class="form-control" id="id_descripcion" placeholder="Here can be your description" name="descripcion" >{{ form.descripcion.value }}</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-info btn-fill">Actualizar</button>
+                            <input type="button" class="btn btn-info btn-fill pull-right" value="Atras" onclick="history.go(-1);" />
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

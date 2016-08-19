@@ -130,7 +130,7 @@
                                         <td>{% if user.is_authenticated %}
                                             <a href="/corazon/edit/paciente/{{item.id}}/" title="Editar" class="" > <i class="pe-7s-note"></i></a>
                                             <a href="{% url "delete_P" item.id %}" title="Eliminar" role="button" class=""> <i class="pe-7s-trash"></i></a>
-                                            <a href="{% url "verUpdateFichaMedica" item.id %}" title="Ficha Medica" class="" > <i class="pe-7s-note2"></i></a>
+{#                                            <a href="{% url "ver_notification" item.id %}" title="Ficha Medica" class="" > <i class="pe-7s-note2"></i></a>#}
                                             {% endif %}
                                         </td>
 
@@ -167,7 +167,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            {% if logs %}
+                            {% if devices %}
                                 {%  for item in devices %}
                                     <tr class="odd gradeX">
                                         <td>{{item.nombre}}</td>

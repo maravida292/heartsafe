@@ -6,14 +6,22 @@ from .forms import MensajeFormPaciente, MensajeFormDoctor, FormMsjToPaciente
 from django.contrib import messages
 from django.contrib.auth.models import Group
 from django.contrib.auth.models import User
-from Corazon.models import Doctor, Paciente
+from Corazon.models import *
 
 # Create your views here.
 
 
-def showNotificacion(request, id_noti):
-	n = Notification.objects.get(id=id_noti)
-	return render(request, "notification.html", {"notification" : n})
+# def showNotificacion(request, id_noti):
+# 	n = Notification.objects.get(id=id_noti)
+# 	form = showMensajeDP(request.POST, instancia=n)
+# 	if form.is_valid():
+# 		instancia = form.save(commit=False)
+# 		instancia.leido = True;
+# 		instancia.save()
+# 	else:
+# 		form = showMensajeDP()
+# 		context = {"titulo": "Enviar Mensaje", "form": form}
+# 	return render(request, "sendMsj.html", context)
 
 
 def deleteNotificacion(request, id_noti):
@@ -41,6 +49,7 @@ def enviarMsjalPaciente(request, id_pac):
 			instancia = form.save(commit=False)  # instancia es un objeto Notificacion
 			instancia.user1 = user1
 			instancia.user_envio = "%s %s (%s)" % (userActual.first_name, userActual.last_name, userActual.username)
+			instancia.tipon = 'M'
 			instancia.save()
 			messages.add_message(request, messages.INFO, 'Mensaje enviado con exito.')  # MESSAGES DESPUES DE AGREGAR PAC
 
@@ -74,6 +83,7 @@ def enviarMensajePD(request):
 	if form.is_valid():
 		instancia = form.save(commit=False)#instancia es un objeto Notificacion
 		instancia.user_envio = "%s %s (%s)" %(user.first_name, user.last_name, user.username)
+		instancia.tipon = 'M'
 		instancia.save()
 		messages.add_message(request, messages.INFO, 'Mensaje enviado con exito.' )#MESSAGES DESPUES DE AGREGAR PAC
 
@@ -83,3 +93,8 @@ def enviarMensajePD(request):
 		}
 
 	return render(request, "sendMsj.html", context)
+
+def messageOfUser(request):
+	user = request.user
+	lista_mensajes = Notification.objects.filter(user1=user, tipon='M', leido=False)
+	return render(request, "notifications.html", locals())

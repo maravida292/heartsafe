@@ -142,7 +142,8 @@ MEDIA_URL = "/media/"
 #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 #Run de comando: python manage.py collectstatic
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
 EMAIL_HOST_USER = 'doctor.cardiologia2016@gmail.com'
-EMAIL_HOST_PASSWORD = 'Espol123'
+EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+EMAIL_HOST_PASSWORD = 'Espol123'
+

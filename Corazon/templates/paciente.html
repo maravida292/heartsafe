@@ -2,6 +2,7 @@
 
 {% block referens %}
     <script src="/static/js/jquery-1.10.2.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="/static/css/buttonSubMenu.css">
 {% endblock %}
 
 {% block title %}
@@ -49,12 +50,12 @@
                                     <td>{{item.cedula}}</td>
                                     <td>{{item.edad}}</td>
 
-                                    <td> 
+                                    <td>
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             Acciones <span class="caret"></span>
                                             </button>
-                                        <ul class="dropdown-menu" role="menu">
+                                        <ul class="dropdown-menu multi-level" role="menu">
                                             <li><a href="{% url 'ver_paciente' item.id %}">Ver</a></li>
                                             <li><a href="{% url 'editar_paciente' item.id %}">Editar</a></li>
 
@@ -65,14 +66,16 @@
                                             <li role="separator" class="divider"></li>
                                             <li class="dropdown-submenu">
 {#                                                <a tabindex="-1" href="{% url 'ficha_medica' item.id %}">Historial Clinico</a></li>#}
-                                                <a tabindex="-1" href="#">Historial Clinico</a>
+                                                <a tabindex="-1" href="">Historial Clinico</a>
                                                 <ul class="dropdown-menu">
-                                                    <li><a href="#">Produc1</a></li>
-					                                <li><a href="#">Produc2</a></li>
+                                                    <li><a href="{% url 'ficha_medica' item.id %}">Crear</a></li>
+                                                    <li><a href="{% url 'verUpdateFichaMedica' item.id %}">Ver - Editar</a></li>
                                                 </ul>
                                             </li>
                                         </ul>
                                         </div>
+
+
 
                                     </td>
                                     <td> <a href="{% url 'verMapa' item.id  %}" style=cursor:pointer; type="button">  <i class="pe-7s-map-marker" style=cursor:pointer;></i> Ubicación </a></td>

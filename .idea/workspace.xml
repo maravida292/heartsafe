@@ -1,36 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b6c7faf6-51d8-4a13-a384-f498cb1b78b9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fichaMedica/templates/verFichaMedica.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Corazon/static/img/loading-bubbles.svg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Corazon/static/img/favicon.ico" afterPath="$PROJECT_DIR$/Corazon/static/img/favicon.ico" />
+    <list default="true" id="b6c7faf6-51d8-4a13-a384-f498cb1b78b9" name="Default" comment="2do commit 17/agost night">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Corazon/static/css/buttonSubMenu.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fichaMedica/templates/editFichaMedica.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Corazon/static/css/tabstyle.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/info.txt.txt" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Corazon/templates/notifications.html" afterPath="$PROJECT_DIR$/Notification/templates/notifications.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Corazon/forms.py" afterPath="$PROJECT_DIR$/Corazon/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Corazon/models.py" afterPath="$PROJECT_DIR$/Corazon/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Corazon/static/css/login.css" afterPath="$PROJECT_DIR$/Corazon/static/css/login.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Corazon/static/js/localizacion.js" afterPath="$PROJECT_DIR$/Corazon/static/js/localizacion.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Corazon/templates/administrador.html" afterPath="$PROJECT_DIR$/Corazon/templates/administrador.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Corazon/templates/base.html" afterPath="$PROJECT_DIR$/Corazon/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Corazon/templates/deletePD.html" afterPath="$PROJECT_DIR$/Corazon/templates/deletePD.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Corazon/templates/home.html" afterPath="$PROJECT_DIR$/Corazon/templates/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Corazon/templates/icons.html" afterPath="$PROJECT_DIR$/Corazon/templates/icons.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Corazon/templates/login.html" afterPath="$PROJECT_DIR$/Corazon/templates/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Corazon/templates/notifications.html" afterPath="$PROJECT_DIR$/Corazon/templates/notifications.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Corazon/templates/maps.html" afterPath="$PROJECT_DIR$/Corazon/templates/maps.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Corazon/templates/paciente.html" afterPath="$PROJECT_DIR$/Corazon/templates/paciente.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Corazon/templates/paciente_edit.html" afterPath="$PROJECT_DIR$/Corazon/templates/paciente_edit.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Corazon/templates/paciente_ver.html" afterPath="$PROJECT_DIR$/Corazon/templates/paciente_ver.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Corazon/urls.py" afterPath="$PROJECT_DIR$/Corazon/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Corazon/views.py" afterPath="$PROJECT_DIR$/Corazon/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fichaMedica/admin.py" afterPath="$PROJECT_DIR$/fichaMedica/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fichaMedica/forms.py" afterPath="$PROJECT_DIR$/fichaMedica/forms.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Notification/forms.py" afterPath="$PROJECT_DIR$/Notification/forms.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Notification/models.py" afterPath="$PROJECT_DIR$/Notification/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Notification/templates/notification.html" afterPath="$PROJECT_DIR$/Notification/templates/notification.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Notification/urls.py" afterPath="$PROJECT_DIR$/Notification/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Notification/views.py" afterPath="$PROJECT_DIR$/Notification/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Proyecto/settings.py" afterPath="$PROJECT_DIR$/Proyecto/settings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fichaMedica/templates/fichaMedica.html" afterPath="$PROJECT_DIR$/fichaMedica/templates/fichaMedica.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fichaMedica/templates/verFichaMedica.html" afterPath="$PROJECT_DIR$/fichaMedica/templates/verFichaMedica.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fichaMedica/urls.py" afterPath="$PROJECT_DIR$/fichaMedica/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fichaMedica/views.py" afterPath="$PROJECT_DIR$/fichaMedica/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gmaps/admin.py" afterPath="$PROJECT_DIR$/gmaps/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gmaps/forms.py" afterPath="$PROJECT_DIR$/gmaps/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gmaps/models.py" afterPath="$PROJECT_DIR$/gmaps/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gmaps/templates/verMapa.html" afterPath="$PROJECT_DIR$/gmaps/templates/verMapa.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gmaps/urls.py" afterPath="$PROJECT_DIR$/gmaps/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gmaps/views.py" afterPath="$PROJECT_DIR$/gmaps/views.py" />
     </list>
     <ignored path="Integradora_CC.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,11 +52,105 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Notification/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="7" column="75" selection-start-line="7" selection-start-column="75" selection-end-line="7" selection-end-column="75" />
+              <folding>
+                <element signature="e#0#42#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="administrador.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Corazon/templates/administrador.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1995">
+              <caret line="133" column="46" selection-start-line="133" selection-start-column="46" selection-end-line="133" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Corazon/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="98" column="33" selection-start-line="98" selection-start-column="33" selection-end-line="98" selection-end-column="33" />
+            <state relative-caret-position="885">
+              <caret line="59" column="70" selection-start-line="59" selection-start-column="70" selection-end-line="59" selection-end-column="70" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Proyecto/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2190">
+              <caret line="146" column="20" selection-start-line="146" selection-start-column="20" selection-end-line="146" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Notification/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="76" selection-start-line="4" selection-start-column="76" selection-end-line="4" selection-end-column="76" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Corazon/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="272" column="102" selection-start-line="272" selection-start-column="102" selection-end-line="272" selection-end-column="102" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gmaps/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Notification/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="37" column="0" selection-start-line="37" selection-start-column="1" selection-end-line="42" selection-end-column="36" />
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Notification/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="notifications.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Notification/templates/notifications.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="675">
+              <caret line="45" column="83" selection-start-line="45" selection-start-column="83" selection-end-line="45" selection-end-column="83" />
               <folding />
             </state>
           </provider>
@@ -87,17 +178,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Notification/templates/notification.html" />
         <option value="$PROJECT_DIR$/Notification/templates/verMensajes.html" />
         <option value="$PROJECT_DIR$/Corazon/templates/doctor.html" />
         <option value="$PROJECT_DIR$/Corazon/static/js/graficaHChard.js" />
-        <option value="$PROJECT_DIR$/Notification/forms.py" />
-        <option value="$PROJECT_DIR$/Notification/urls.py" />
-        <option value="$PROJECT_DIR$/Notification/models.py" />
         <option value="$PROJECT_DIR$/Corazon/templates/registrar.html" />
         <option value="$PROJECT_DIR$/Corazon/templates/formulario_contactos.html" />
         <option value="$PROJECT_DIR$/Notification/templates/sendMsj.html" />
-        <option value="$PROJECT_DIR$/Notification/views.py" />
         <option value="$PROJECT_DIR$/Proyecto/wsgi.py" />
         <option value="$PROJECT_DIR$/gmaps/templates/verGrafica.html" />
         <option value="$PROJECT_DIR$/Corazon/static/css/tabstyle.css" />
@@ -106,29 +192,39 @@
         <option value="$PROJECT_DIR$/Corazon/models.py" />
         <option value="$PROJECT_DIR$/gmaps/templates/verMapa.html" />
         <option value="$PROJECT_DIR$/gmaps/urls.py" />
-        <option value="$PROJECT_DIR$/Corazon/templates/paciente_edit.html" />
         <option value="$PROJECT_DIR$/gmaps/views.py" />
         <option value="$PROJECT_DIR$/Corazon/templates/deletePD.html" />
         <option value="$PROJECT_DIR$/Corazon/templates/paciente_ver.html" />
         <option value="$PROJECT_DIR$/gmaps/forms.py" />
         <option value="$PROJECT_DIR$/gmaps/models.py" />
         <option value="$PROJECT_DIR$/gmaps/admin.py" />
-        <option value="$PROJECT_DIR$/fichaMedica/templates/fichaMedica.html" />
         <option value="$PROJECT_DIR$/fichaMedica/admin.py" />
-        <option value="$PROJECT_DIR$/fichaMedica/urls.py" />
         <option value="$PROJECT_DIR$/fichaMedica/forms.py" />
-        <option value="$PROJECT_DIR$/fichaMedica/templates/verFichaMedica.html" />
-        <option value="$PROJECT_DIR$/fichaMedica/views.py" />
         <option value="$PROJECT_DIR$/Corazon/static/css/login.css" />
-        <option value="$PROJECT_DIR$/Corazon/views.py" />
-        <option value="$PROJECT_DIR$/Corazon/templates/notifications.html" />
         <option value="$PROJECT_DIR$/Corazon/forms.py" />
         <option value="$PROJECT_DIR$/Corazon/templates/login.html" />
-        <option value="$PROJECT_DIR$/Corazon/templates/base.html" />
         <option value="$PROJECT_DIR$/Corazon/static/js/localizacion.js" />
+        <option value="$PROJECT_DIR$/Corazon/static/css/buttonSubMenu.css" />
+        <option value="$PROJECT_DIR$/Corazon/templates/paciente.html" />
+        <option value="$PROJECT_DIR$/fichaMedica/templates/fichaMedica.html" />
+        <option value="$PROJECT_DIR$/Corazon/templates/paciente_edit.html" />
+        <option value="$PROJECT_DIR$/fichaMedica/templates/verFichaMedica.html" />
+        <option value="$PROJECT_DIR$/fichaMedica/urls.py" />
+        <option value="$PROJECT_DIR$/fichaMedica/views.py" />
+        <option value="$PROJECT_DIR$/fichaMedica/templates/editFichaMedica.html" />
+        <option value="$PROJECT_DIR$/Notification/models.py" />
+        <option value="$PROJECT_DIR$/Corazon/templates/notifications.html" />
+        <option value="$PROJECT_DIR$/Corazon/urls.py" />
+        <option value="$PROJECT_DIR$/Corazon/templates/base.html" />
+        <option value="$PROJECT_DIR$/Notification/templates/notifications.html" />
+        <option value="$PROJECT_DIR$/Notification/templates/notification.html" />
+        <option value="$PROJECT_DIR$/Notification/forms.py" />
+        <option value="$PROJECT_DIR$/Notification/views.py" />
+        <option value="$PROJECT_DIR$/Notification/urls.py" />
         <option value="$PROJECT_DIR$/Corazon/templates/administrador.html" />
         <option value="$PROJECT_DIR$/Corazon/templates/home.html" />
-        <option value="$PROJECT_DIR$/Corazon/templates/paciente.html" />
+        <option value="$PROJECT_DIR$/Proyecto/settings.py" />
+        <option value="$PROJECT_DIR$/Corazon/views.py" />
       </list>
     </option>
   </component>
@@ -167,7 +263,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -196,7 +291,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Corazon" />
+              <option name="myItemId" value="gmaps" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -210,16 +305,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Corazon" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
+              <option name="myItemId" value="Proyecto" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -230,11 +322,12 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Notification/templates" />
+      <recent name="$PROJECT_DIR$/gmaps/static/js" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Corazon/static/js" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/gmaps/static/js" />
     </key>
   </component>
   <component name="RestClientSettings">
@@ -917,19 +1010,36 @@
       <option name="presentableId" value="Default" />
       <updated>1469086764680</updated>
     </task>
+    <task id="LOCAL-00001" summary="2do commit 17/agost night">
+      <created>1471493202337</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1471493202337</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="TodoView" selected-index="1">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="743" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1614623" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42114094" sideWeight="0.50266564" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2711348" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23657718" sideWeight="0.5102818" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.49733436" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29194632" sideWeight="0.48819497" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23993288" sideWeight="0.4897182" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.49124143" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -962,96 +1072,17 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="10" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/Notification/views.py</url>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Proyecto/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gmaps/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Corazon/static/js/chartist.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Corazon/static/js/graficaHChard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="75" selection-start-line="17" selection-start-column="75" selection-end-line="17" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Proyecto/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Corazon/static/css/demo.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Corazon/static/css/layout2.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Corazon/static/css/tabstyle.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Proyecto/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6">
-          <caret line="124" column="9" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Notification/templates/verMensajes.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="35" column="36" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Corazon/templates/doctor.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Corazon/validators.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.local/lib/python2.7/site-packages/django/contrib/auth/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
@@ -1073,31 +1104,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Corazon/templates/paciente_edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Corazon/templates/deletePD.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Notification/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Notification/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -1115,13 +1125,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gmaps/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gmaps/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -1129,24 +1132,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fichaMedica/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" column="8" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Corazon/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="67" selection-start-line="13" selection-start-column="67" selection-end-line="13" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fichaMedica/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -1164,13 +1153,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fichaMedica/templates/fichaMedica.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1035">
-          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fichaMedica/templates/tabsFichaMedica.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -1182,13 +1164,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fichaMedica/templates/verFichaMedica.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="172" selection-start-line="25" selection-start-column="172" selection-end-line="25" selection-end-column="172" />
         </state>
       </provider>
     </entry>
@@ -1213,45 +1188,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fichaMedica/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="69" column="42" selection-start-line="69" selection-start-column="42" selection-end-line="69" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Corazon/templates/notifications.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Corazon/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="59" column="35" selection-start-line="59" selection-start-column="35" selection-end-line="59" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Corazon/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1026">
           <caret line="117" column="53" selection-start-line="117" selection-start-column="53" selection-end-line="117" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Corazon/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="33" column="57" selection-start-line="33" selection-start-column="57" selection-end-line="33" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Corazon/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="257" column="33" selection-start-line="257" selection-start-column="33" selection-end-line="257" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -1280,7 +1220,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="36" column="64" selection-start-line="36" selection-start-column="64" selection-end-line="36" selection-end-column="64" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1288,31 +1227,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Corazon/templates/administrador.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="179" column="40" selection-start-line="179" selection-start-column="40" selection-end-line="179" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Corazon/templates/paciente.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Corazon/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="18" column="64" selection-start-line="18" selection-start-column="64" selection-end-line="18" selection-end-column="64" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1320,14 +1234,218 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="344">
           <caret line="44" column="22" selection-start-line="44" selection-start-column="22" selection-end-line="44" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Corazon/static/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-14078">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Corazon/static/css/boton.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Corazon/static/css/buttonSubMenu.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Corazon/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="47" column="6" selection-start-line="47" selection-start-column="6" selection-end-line="47" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Corazon/templates/paciente.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="71" column="73" selection-start-line="71" selection-start-column="73" selection-end-line="71" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Corazon/static/css/tabstyle.css" />
+    <entry file="file://$PROJECT_DIR$/fichaMedica/templates/fichaMedica.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="89" selection-start-line="6" selection-start-column="89" selection-end-line="6" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fichaMedica/templates/verFichaMedica.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="46" column="105" selection-start-line="46" selection-start-column="105" selection-end-line="46" selection-end-column="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fichaMedica/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fichaMedica/templates/editFichaMedica.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="24" column="63" selection-start-line="24" selection-start-column="63" selection-end-line="24" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fichaMedica/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="15" column="77" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fichaMedica/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="861">
+          <caret line="77" column="51" selection-start-line="77" selection-start-column="51" selection-end-line="77" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Corazon/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="106" column="20" selection-start-line="106" selection-start-column="20" selection-end-line="106" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Corazon/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="20" column="49" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Notification/templates/notification.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Notification/templates/sendMsj.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-738">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Corazon/templates/paciente_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="40" selection-start-line="31" selection-start-column="40" selection-end-line="39" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.local/lib/python2.7/site-packages/django/forms/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2632">
+          <caret line="257" column="19" selection-start-line="257" selection-start-column="19" selection-end-line="257" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Notification/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="7" column="75" selection-start-line="7" selection-start-column="75" selection-end-line="7" selection-end-column="75" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Corazon/templates/administrador.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1995">
+          <caret line="133" column="46" selection-start-line="133" selection-start-column="46" selection-end-line="133" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Corazon/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="98" column="33" selection-start-line="98" selection-start-column="33" selection-end-line="98" selection-end-column="33" />
+        <state relative-caret-position="885">
+          <caret line="59" column="70" selection-start-line="59" selection-start-column="70" selection-end-line="59" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.local/lib/python2.7/site-packages/django/core/mail/message.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5970">
+          <caret line="419" column="8" selection-start-line="419" selection-start-column="8" selection-end-line="419" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proyecto/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2190">
+          <caret line="146" column="20" selection-start-line="146" selection-start-column="20" selection-end-line="146" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Notification/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="76" selection-start-line="4" selection-start-column="76" selection-end-line="4" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Corazon/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="272" column="102" selection-start-line="272" selection-start-column="102" selection-end-line="272" selection-end-column="102" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Notification/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="1" selection-end-line="42" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Notification/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Notification/templates/notifications.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="45" column="83" selection-start-line="45" selection-start-column="83" selection-end-line="45" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gmaps/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>

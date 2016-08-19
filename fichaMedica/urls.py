@@ -9,6 +9,7 @@ urlpatterns = [
 	url(r'^pac/tratemientos/(?P<id_pac>.*)/', views.registrar_ficha_medica_tipo, {'tipoFicha': 4}, name='tratamientos'),
 
 	url(r'^ver/pac/(?P<id_pac>.*)/', views.ver_update_ficha, name='verUpdateFichaMedica'),
+	url(r'^edit/(?P<id_fm>.*)/', views.edit_ficha, name='editFichaMedica'),
 
 
 ]

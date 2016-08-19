@@ -65,17 +65,26 @@ def ficha_medica(request, id_pac):
 	return render (request, "fichaMedica.html", {'paciente' : paciente, 'doctor': doctor})
 
 
-def ver_update_ficha(request, id_pac):
-	paciente1 = FichaMedica.objects.get(id=id_pac)
-	ficha1 = FichaMedica.objects.get(id=11)
+def edit_ficha(request, id_fm):
+	ficha1 = FichaMedica.objects.get(id=id_fm)
 	if request.method == "POST":
 		form = ficha_MedicaForm(request.POST, instance=ficha1)
 		if form.is_valid():
 			form.save()
-			return redirect('administrador')
+			return redirect('paciente')
 	else:
 		form = ficha_MedicaForm(instance=ficha1)
 	context = {'form': form}
-	return render_to_response("verFichaMedica.html", context, context_instance=RequestContext(request))
+	return render_to_response("editFichaMedica.html", context, context_instance=RequestContext(request))
+
+
+def ver_update_ficha(request, id_pac):
+	paciente1 = Paciente.objects.get(id=id_pac)
+	lista_fm_enfer = FichaMedica.objects.filter(paciente=paciente1, tipo='E').order_by('-fecha')
+	lista_fm_cirujia = FichaMedica.objects.filter(paciente=paciente1, tipo='C').order_by('-fecha')
+	lista_fm_alergia = FichaMedica.objects.filter(paciente=paciente1, tipo='A').order_by('-fecha')
+	lista_fm_tratami = FichaMedica.objects.filter(paciente=paciente1, tipo='T').order_by('-fecha')
+
+	return render(request, "verFichaMedica.html", locals())
 
 

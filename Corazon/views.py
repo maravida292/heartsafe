@@ -6,8 +6,8 @@ from django.shortcuts import render, render_to_response, redirect
 from django.views.generic import TemplateView, FormView, ListView
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import RequestContext
-from django.core.urlresolvers import reverse_lazy
 from django.core.mail import EmailMultiAlternatives
+from django.core.mail import send_mail, BadHeaderError
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.decorators import permission_required
 
@@ -260,22 +260,25 @@ def verPacienteDeUnID(request, id_prod):	#Cuenta-Paciente
 def enviarMailPac(request, id_pac):
 	pac = Paciente.objects.get(id=id_pac)
 	mail_destinatario = pac.usuario.email
-	#print mail_destinatario
 	if (mail_destinatario != ""):
 		if request.method == 'POST':
 			form = FormMail(request.POST)
 			context = {	"form" : form }
 			if form.is_valid():
 				cd = form.cleaned_data
-				titulo = cd['asunto']
+				asunto = cd['asunto']
 				texto = cd['mensaje']
-				#CONFIGURACION ENVIANDO MENSAJE VIA GMAIL... subject, contenido, quien lo esta mandando, lista_destinatarios
 				to_admin = 'girlsbaby_213@hotmail.com'
-				html_content = "Informacion recibida. <br> <br> <br> >>>>>>>>MENSAJE<<<<<<<< <br> <br> %s" %(texto)
-				msg = EmailMultiAlternatives('NOTIFICACION', html_content, 'from@server.com', [mail_destinatario])
-				msg.attach_alternative(html_content, 'text/html')
-				msg.send()
-				context = { "titulo" : "Se envio correctamente el e-mail" }
+
+				#CONFIGURACION ENVIANDO MENSAJE VIA GMAIL... subject, contenido, quien lo esta mandando, lista_destinatarios
+				if asunto and texto and to_admin:
+					try:
+						send_mail(asunto, texto, 'from@server.com', [mail_destinatario], fail_silently=False,)
+					except BadHeaderError:
+						return HttpResponse('Argumentos invalidos encontrados')
+					context = {"titulo": "Se envio correctamente el e-mail"}
+				else:
+					return HttpResponse('Escriba correctamente el correo')
 		else:	#GET
 				form = FormMail()
 				context = {	"form" : form }

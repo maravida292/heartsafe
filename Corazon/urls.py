@@ -19,7 +19,6 @@ urlpatterns = [
 	url(r'^home/', views.IndexHome, name='home'),	
 	url(r'^doctor/', views.IndexDoctor, name='doctor'),
 	url(r'^mapa/', views.IndexMapa, name='mapa'),
-	url(r'^noti/', views.IndexNoti, name='noti'),
 	
 
 	url(r'^registrar_doc/$', views.RegistrarDoctor, name='registrar_doc'),

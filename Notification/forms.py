@@ -34,3 +34,10 @@ class FormMsjToPaciente(forms.ModelForm):
 		model = Notification
 		fields = ['titulo', 'mensaje']
 		exclude = {'user1', 'fecha', 'leido', 'user_envio'}
+
+#
+# class showMensajeDP(forms.ModelForm):
+# 	class Meta:
+# 		model = Notification
+# 		fields = ['user_envio', 'titulo', 'mensaje', 'fecha']
+# 		exclude = {'user1', 'leido'}
