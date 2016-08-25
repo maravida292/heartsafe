@@ -53,7 +53,7 @@ def IndexMapa(request):
 
 
 def IndexNoti(request):
-    return render(request, 'notifications.html')
+    return render(request, 'notifications-menu.html')
 
 
 class MostrarDoctores(ListView):

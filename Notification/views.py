@@ -2,7 +2,7 @@ from django.shortcuts import render, render_to_response, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import RequestContext
 from .models import Notification
-from .forms import MensajeFormPaciente, MensajeFormDoctor, FormMsjToPaciente
+from .forms import *
 from django.contrib import messages
 from django.contrib.auth.models import Group
 from django.contrib.auth.models import User
@@ -11,24 +11,19 @@ from Corazon.models import *
 # Create your views here.
 
 
-# def showNotificacion(request, id_noti):
-# 	n = Notification.objects.get(id=id_noti)
-# 	form = showMensajeDP(request.POST, instancia=n)
-# 	if form.is_valid():
-# 		instancia = form.save(commit=False)
-# 		instancia.leido = True;
-# 		instancia.save()
-# 	else:
-# 		form = showMensajeDP()
-# 		context = {"titulo": "Enviar Mensaje", "form": form}
-# 	return render(request, "sendMsj.html", context)
-
-
-def deleteNotificacion(request, id_noti):
+def verMensaje(request, id_noti):
 	n = Notification.objects.get(id=id_noti)
-	n.leido = True
-	n.save()
-	return HttpResponseRedirect('/notification/verMensajes')
+	if request.method == "POST":
+		form = showMensajeDP(request.POST, instance=n)
+		if form.is_valid():
+			instancia = form.save(commit=False)
+			instancia.leido = True;
+			instancia.save()
+			context = {"titulo": "MENSAJE ENVIADO CORRECTAMENTE"}
+	else:
+		form = showMensajeDP(instance=n)
+		context = {"titulo": "Ver mensaje.", "form": form}
+	return render(request, "notification.html", context)
 
 
 def showALLNotification(request):
@@ -97,4 +92,4 @@ def enviarMensajePD(request):
 def messageOfUser(request):
 	user = request.user
 	lista_mensajes = Notification.objects.filter(user1=user, tipon='M', leido=False)
-	return render(request, "notifications.html", locals())
+	return render(request, "notifications-menu.html", locals())

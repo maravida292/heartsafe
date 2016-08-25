@@ -11,7 +11,7 @@ class ficha_MedicaForm(forms.ModelForm):
 	class Meta:
 		model   = FichaMedica
 		fields = ['detalles','descripcion']
-		exclude = {'paciente', 'doctor', 'tipo','fecha'}
+		exclude = {'paciente', 'doctor', 'tipo', "fecha_noti"}
 
 	def clean(self):
 		print self.cleaned_data
@@ -24,4 +24,4 @@ class ficha_MedicaForm2(forms.ModelForm):
 	class Meta:
 		model   = FichaMedica
 		fields = ['detalles','descripcion']
-		exclude = {'paciente', 'doctor', 'tipo','fecha'}
+		exclude = {'paciente', 'doctor', 'tipo', "fecha_noti"}

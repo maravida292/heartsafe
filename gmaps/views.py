@@ -60,6 +60,7 @@ def get_lps(request):#Funcion para graficas
 
 	return HttpResponse(ult_pulso)
 
+
 @csrf_exempt
 def get_lng(request, id_pac):#Funcion para obtener lista de ubicacion JSON del mapa
 	print(id_pac)

@@ -14,7 +14,7 @@ class Pulsos(models.Model):
 	device = models.ForeignKey(Device)
 	lat = models.CharField(max_length=80)
 	lng = models.CharField(max_length=80)
-	BPM = models.CharField(max_length=80)
+	BPM = models.CharField(max_length=8)
 	fecha = models.DateTimeField(auto_now_add=True)
 
 	def __unicode__(self):
