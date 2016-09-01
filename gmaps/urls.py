@@ -13,4 +13,6 @@ urlpatterns = [
 	url(r'^createDevice/', views.createDevice, name='createDevice'),
 	url(r'^edit/dev/(?P<id_device>.*)/', views.editDevice, name='editarDevice'),
 	url(r'^delete/dev/(?P<id_device>.*)/', views.deleteDevice, name='eliminarDevice'),
+	url(r'^reporte/reportexfecha/(?P<id_pac>.*)/', views.reportexFecha, name='reportexFecha'),
+
 ]

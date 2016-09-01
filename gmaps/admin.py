@@ -3,8 +3,8 @@ from .models import *
 
 
 class PulsosAdmin(admin.ModelAdmin):
-	list_display = ('id','device', 'lat', 'lng')
-	list_filter = ('fecha','device',)
+	list_display = ('id','device', 'lat', 'lng', 'fecha')
+	list_filter = ('fecha','hora','device',)
 
 
 class DeviceAdmin(admin.ModelAdmin):

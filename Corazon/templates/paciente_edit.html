@@ -24,6 +24,17 @@
                                 <form action="." method="POST" enctype="multipart/form-data">{% csrf_token %}
                                     {% load bootstrap %}
 
+                                    {% if item.foto %}
+                                        <img style="width: 140px; height: 140px;" src="/media/{{item.foto}}" class="img-responsive img-thumbnail center-block" alt="Responsive image">
+                                        <br>
+                                    {% elif paciente1.foto %}
+                                        <img style="width: 140px; height: 140px;" src="/media/{{paciente1.foto}}" class="img-responsive img-thumbnail center-block" alt="Responsive image">
+                                        <br>
+                                    {% else %}
+                                        <img style="width: 140px; height: 140px;" src="/static/img/default-avatar.png" class="img-responsive img-thumbnail center-block" alt="Responsive image">
+                                    {% endif %}
+
+
                                     {% if form2 %}
                                         {{ form2|bootstrap_horizontal:'col-sm-4'}}
                                     {% endif %}

@@ -39,7 +39,7 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6,
-p,
+p, ul, li
 .navbar,
 .brand,
 .btn-simple,
@@ -139,6 +139,49 @@ body,
   position: relative;
 }
 
+/*     LO QUE YO PUSE    */
+.wrapper ul {
+  list-style: none;
+}
+
+.wrapper .sidebar .sidebar-wrapper .nav ul li a{ 
+  font-family: "Roboto","Helvetica Neue",Arial,sans-serif;
+}
+
+.wrapper .sidebar .sidebar-wrapper .nav .icono {
+  font-size: 15px;  /*Tamano de la fuente*/
+  line-height: 1px;  /*Tamano de linea -- TIENE Q CONCORDAR*/
+}
+
+.wrapper .sidebar .sidebar-wrapper .nav .icono.derecha {
+  float: right;
+  margin-left: 50px;
+  margin-top: -16px;
+}
+
+.wrapper .sidebar .sidebar-wrapper .nav ul {
+  display: none;  /*Ocultar submenus*/
+}
+
+.wrapper .sidebar .sidebar-wrapper {
+  width: 20%;
+  min-width: 255px;
+  margin: 0px;
+  display: inline-block;
+  line-height: 18px;
+}
+
+.wrapper .sidebar .sidebar-wrapper .nav{
+  width: 100%;
+}
+
+.wrapper .sidebar .sidebar-wrapper .nav li ul a{
+  display: block;
+  padding: 10px 4px;
+}
+
+/************************/
+
 a {
   color: #1DC7EA;
 }
@@ -214,6 +257,7 @@ input:focus {
   top: 0;
   bottom: 0;
   left: 0;
+  --sidebar-width: 260px;
   width: 260px;
   display: block;
   z-index: 1;
@@ -1416,7 +1460,7 @@ body > .navbar-collapse[data-color="purple"]:after {
   font-size: 16px;
 }
 .navbar.fixed {
-  width: calc(100% - $sidebar-width);
+  width: calc(100% - var(--sidebar-width));
   right: 0;
   left: auto;
   border-radius: 0;
@@ -2027,61 +2071,61 @@ body > .navbar-collapse[data-color="purple"]:after {
 }
 
 .ct-label.ct-horizontal.ct-start {
-  -webkit-box-align: flex-end;
+  -webkit-box-align: end;
   -webkit-align-items: flex-end;
-  -ms-flex-align: flex-end;
+  -ms-flex-align: end;
   align-items: flex-end;
-  -webkit-box-pack: flex-start;
+  -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
-  -ms-flex-pack: flex-start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
   text-align: left;
   text-anchor: start;
 }
 
 .ct-label.ct-horizontal.ct-end {
-  -webkit-box-align: flex-start;
+  -webkit-box-align: start;
   -webkit-align-items: flex-start;
-  -ms-flex-align: flex-start;
+  -ms-flex-align: start;
   align-items: flex-start;
-  -webkit-box-pack: flex-start;
+  -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
-  -ms-flex-pack: flex-start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
   text-align: left;
   text-anchor: start;
 }
 
 .ct-label.ct-vertical.ct-start {
-  -webkit-box-align: flex-end;
+  -webkit-box-align: end;
   -webkit-align-items: flex-end;
-  -ms-flex-align: flex-end;
+  -ms-flex-align: end;
   align-items: flex-end;
-  -webkit-box-pack: flex-end;
+  -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
-  -ms-flex-pack: flex-end;
+  -ms-flex-pack: end;
   justify-content: flex-end;
   text-align: right;
   text-anchor: end;
 }
 
 .ct-label.ct-vertical.ct-end {
-  -webkit-box-align: flex-end;
+  -webkit-box-align: end;
   -webkit-align-items: flex-end;
-  -ms-flex-align: flex-end;
+  -ms-flex-align: end;
   align-items: flex-end;
-  -webkit-box-pack: flex-start;
+  -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
-  -ms-flex-pack: flex-start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
   text-align: left;
   text-anchor: start;
 }
 
 .ct-chart-bar .ct-label.ct-horizontal.ct-start {
-  -webkit-box-align: flex-end;
+  -webkit-box-align: end;
   -webkit-align-items: flex-end;
-  -ms-flex-align: flex-end;
+  -ms-flex-align: end;
   align-items: flex-end;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
@@ -2092,9 +2136,9 @@ body > .navbar-collapse[data-color="purple"]:after {
 }
 
 .ct-chart-bar .ct-label.ct-horizontal.ct-end {
-  -webkit-box-align: flex-start;
+  -webkit-box-align: start;
   -webkit-align-items: flex-start;
-  -ms-flex-align: flex-start;
+  -ms-flex-align: start;
   align-items: flex-start;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
@@ -2105,26 +2149,26 @@ body > .navbar-collapse[data-color="purple"]:after {
 }
 
 .ct-chart-bar.ct-horizontal-bars .ct-label.ct-horizontal.ct-start {
-  -webkit-box-align: flex-end;
+  -webkit-box-align: end;
   -webkit-align-items: flex-end;
-  -ms-flex-align: flex-end;
+  -ms-flex-align: end;
   align-items: flex-end;
-  -webkit-box-pack: flex-start;
+  -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
-  -ms-flex-pack: flex-start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
   text-align: left;
   text-anchor: start;
 }
 
 .ct-chart-bar.ct-horizontal-bars .ct-label.ct-horizontal.ct-end {
-  -webkit-box-align: flex-start;
+  -webkit-box-align: start;
   -webkit-align-items: flex-start;
-  -ms-flex-align: flex-start;
+  -ms-flex-align: start;
   align-items: flex-start;
-  -webkit-box-pack: flex-start;
+  -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
-  -ms-flex-pack: flex-start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
   text-align: left;
   text-anchor: start;
@@ -2135,9 +2179,9 @@ body > .navbar-collapse[data-color="purple"]:after {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: flex-end;
+  -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
-  -ms-flex-pack: flex-end;
+  -ms-flex-pack: end;
   justify-content: flex-end;
   text-align: right;
   text-anchor: end;
@@ -2148,9 +2192,9 @@ body > .navbar-collapse[data-color="purple"]:after {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: flex-start;
+  -webkit-box-pack: start;
   -webkit-justify-content: flex-start;
-  -ms-flex-pack: flex-start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
   text-align: left;
   text-anchor: end;
@@ -2858,12 +2902,45 @@ body > .navbar-collapse[data-color="purple"]:after {
     display: block;
   }
 
+  /*LO QUE PUSE YOP*/
+
+  .nav.navbar-nav > li ul{
+    list-style: none;
+  }
+
+  .nav.navbar-nav li a p{
+    font-weight: bold;
+  }
+
+  .nav.navbar-nav li ul li a{
+    color: white;
+    font-size: 14px;
+  }
+
+  .nav.navbar-nav ul{
+    display: none;  /*Ocultar submenus 2*/
+  }
+
+  .nav.navbar-nav .icono {
+	font-size: 15px;	/*Tamano de la fuente*/
+	line-height: 1px;	/*Tamano de linea -- TIENE Q CONCORDAR*/
+  }
+
+  .nav.navbar-nav .icono.derecha {
+	float: right;
+    margin-left: 50px;
+    margin-top: -12px;
+}
+
+  /*****************************/
+
+
   body > .navbar-collapse {
     position: fixed;
     display: block;
     top: 0;
     height: 100%;
-    width: 250px;
+    width: 251px;
     right: 0;
     z-index: 1032;
     visibility: visible;
@@ -2882,6 +2959,7 @@ body > .navbar-collapse[data-color="purple"]:after {
     -o-transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
     -ms-transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
     transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
+
   }
   body > .navbar-collapse > ul {
     position: relative;
@@ -2889,9 +2967,10 @@ body > .navbar-collapse[data-color="purple"]:after {
     overflow-y: scroll;
     height: calc(100vh - 61px);
     width: 100%;
+    margin-top: 20px;
   }
   body > .navbar-collapse .nav > li > a {
-    padding: 30px 25px;
+    padding: 15px 25px;
   }
   body > .navbar-collapse::before {
     top: 0;
@@ -3061,7 +3140,7 @@ body > .navbar-collapse[data-color="purple"]:after {
     }
     100% {
       top: 0px;
-      transform: rotate(0);
+      transform: rotate(0deg);
     }
   }
   @-webkit-keyframes topbar-back {
@@ -3077,7 +3156,7 @@ body > .navbar-collapse[data-color="purple"]:after {
     }
     100% {
       top: 0px;
-      -webkit-transform: rotate(0);
+      -webkit-transform: rotate(0deg);
     }
   }
   @-moz-keyframes topbar-back {
@@ -3093,7 +3172,7 @@ body > .navbar-collapse[data-color="purple"]:after {
     }
     100% {
       top: 0px;
-      -moz-transform: rotate(0);
+      -moz-transform: rotate(0deg);
     }
   }
   @keyframes bottombar-x {
@@ -3157,7 +3236,7 @@ body > .navbar-collapse[data-color="purple"]:after {
     }
     100% {
       bottom: 0px;
-      transform: rotate(0);
+      transform: rotate(0deg);
     }
   }
   @-webkit-keyframes bottombar-back {
@@ -3173,7 +3252,7 @@ body > .navbar-collapse[data-color="purple"]:after {
     }
     100% {
       bottom: 0px;
-      -webkit-transform: rotate(0);
+      -webkit-transform: rotate(0deg);
     }
   }
   @-moz-keyframes bottombar-back {
@@ -3189,7 +3268,7 @@ body > .navbar-collapse[data-color="purple"]:after {
     }
     100% {
       bottom: 0px;
-      -moz-transform: rotate(0);
+      -moz-transform: rotate(0deg);
     }
   }
   @-webkit-keyframes fadeIn {
@@ -3360,15 +3439,15 @@ body > .navbar-collapse[data-color="purple"]:after {
     -webkit-box-shadow: none;
     box-shadow: none;
   }
-
+/*COMENTARIO JEYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY*/
   .navbar-collapse .nav p {
-    font-size: 14px;
+    font-size: 15px;
     margin: 0;
   }
   .navbar-collapse [class^="pe-7s-"] {
     float: left;
-    font-size: 20px;
-    margin-right: 10px;
+    font-size: 25px;
+    margin-right: 12px;
   }
 }
 @media (min-width: 992px) {
@@ -3390,4 +3469,74 @@ body > .navbar-collapse[data-color="purple"]:after {
     -ms-overflow-style: -ms-autohiding-scrollbar;
     -webkit-overflow-scrolling: touch;
   }
+}
+
+
+
+/* LO QUE YO PUSE XD */
+nav {
+    z-index: 1;
+}
+#sidebar-wrapper {
+  top: 52px;
+  left: -200px;
+  width: 260px;
+  background-color: #5677fc;
+  color: white;
+  position: fixed;
+  height: 100%;
+  z-index: 1;
+}
+
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  width: 250px;
+  list-style: none;
+}
+#sidebar-wrapper.sidebar-toggle {
+  transition: all 0.3s ease-out;
+  margin-left: -200px;
+}
+@media (min-width: 768px) {
+  #sidebar-wrapper.sidebar-toggle {
+    transition: 0s;
+    left: 200px;
+  }
+  #page-wrapper {
+      margin-left: 200px;
+  }
+}
+
+.submenu-heading {
+    padding: 15px;
+    cursor: pointer;
+}
+
+.submenu-heading h4 {
+    margin: 0;
+}
+
+.submenu-heading:hover {
+    background: rgba(255, 255, 255, .5);
+    color: rgba(0, 0, 0, .6);
+}
+
+.submenu .list-group {
+    margin: 0;
+}
+
+.submenu .list-group-item {
+    border-radius: 0;
+    background: rgba(0, 0, 0, .07);
+    border: 0;
+    color: black;
+    padding: .75em 1.7em;
+}
+
+.submenu .list-group-item:hover {
+    background: rgba(255, 255, 255, .5);
 }

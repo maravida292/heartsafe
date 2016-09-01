@@ -11,9 +11,10 @@ import json
 
 #Importacion de los modelos
 from eventlog.models import log
-from gmaps.models import Device
-from gmaps.forms import *
+from datetime import datetime, timedelta, time
+from gmaps.models import Device, Pulsos
 from Corazon.models import Paciente
+from gmaps.forms import *
 
 
 
@@ -47,7 +48,7 @@ def create_Data(request):##Funcion para receptar los datos sensados del corazon 
 
 
 @csrf_exempt
-def get_lps(request):#Funcion para graficas
+def get_lps(request):#Funcion para graficar el ultimo pulso :)
 	try:
 		id_dispo = request.POST.get("id_dispo")
 		pulsos = Pulsos.objects.filter(device=Device.objects.get(codigo=id_dispo))
@@ -114,5 +115,32 @@ def deleteDevice(request, id_device):
 		device.delete()
 		return redirect('administrador')  # Se redirige a la url q tiene como nombre administrador
 	return render(request, 'deletePD.html', {'item_eliminar': device.nombre})
+
+
+def reportexFecha(request, id_pac):
+	pac = Paciente.objects.get(id=id_pac)
+	today = datetime.now().date()
+	tomorrow = today + timedelta(1)
+	if (request.GET.get('datepiker') == None or request.GET.get('datepiker2') == None):
+		# pulsos = Pulsos.objects.filter(device=pac.devide1.id)
+		pulsos= Pulsos.objects.all()
+	else:
+		try:
+			date1 = request.GET.get('datepiker')
+			date2 = request.GET.get('datepiker2')
+
+			# DATE
+			start_date = datetime.strptime(date1, "%Y-%m-%d").date()
+			end_date = datetime.strptime(date2, "%Y-%m-%d").date()
+
+			#TIME
+			#t1 = datetime.strptime("09:25:00", '%H:%M:%S').time()
+
+			pulsos = Pulsos.objects.filter(device=pac.devide1.id, fecha__range=(start_date, end_date))
+		except:
+			pulsos = Pulsos.objects.all()
+
+	return render(request, 'reportes_xfecha.html', locals())
+
 
 

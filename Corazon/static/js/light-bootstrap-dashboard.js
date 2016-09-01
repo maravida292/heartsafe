@@ -34,6 +34,35 @@ $(document).ready(function(){
     }).on("blur", function(){
         $(this).parent(".input-group").removeClass("input-group-focus");
     });
+
+////////////////////////////////LO QUE YO PUSE//////////////////////
+
+    $('.nav li:has(ul)').click(function(e){
+        //solo los li que contengan elementos ul 
+        e.preventDefault();
+
+        if($(this).hasClass("active")){
+            //This -- elemento clikeado tiene la clase "activado"
+            $(this).removeClass("active");
+            $(this).children('ul').slideUp();
+        } else {
+            //todos los submenus los ocultamos
+            $('.nav li ul').slideUp();
+            $('.nav li').removeClass('active');
+            $(this).addClass("active");//Le agregamos la clase activado solo al clikeado
+            $(this).children('ul').slideDown();
+        }
+    });
+
+    $('.nav li ul li a').click(function () {
+        window.location.href = $(this).attr("href");
+
+    })
+
+
+////////////////////////////////////////////////////////////////////
+
+
       
 });
 
@@ -146,14 +175,14 @@ lbd = {
 // leading edge, instead of the trailing.
 
 function debounce(func, wait, immediate) {
-	var timeout;
-	return function() {
-		var context = this, args = arguments;
-		clearTimeout(timeout);
-		timeout = setTimeout(function() {
-			timeout = null;
-			if (!immediate) func.apply(context, args);
-		}, wait);
-		if (immediate && !timeout) func.apply(context, args);
-	};
+    var timeout;
+    return function() {
+        var context = this, args = arguments;
+        clearTimeout(timeout);
+        timeout = setTimeout(function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        }, wait);
+        if (immediate && !timeout) func.apply(context, args);
+    };
 };

@@ -87,7 +87,7 @@ class PacienteForm(UserCreationForm):
 class Doctor2Form(forms.ModelForm):
 	class Meta:
 		model = Doctor
-		fields = ['sexo','clinica','telefono','direccion']
+		fields = ['sexo','clinica','telefono','direccion','foto']
 
 class userForm(forms.ModelForm):
 	class Meta:
@@ -125,7 +125,7 @@ class PacienteFormDOC(forms.ModelForm):
 class DoctorForm2(UserCreationForm):
 	class Meta:
 		model   = Doctor
-		fields = ['usuario','sexo','clinica','telefono','direccion' ]
+		fields = ['usuario','sexo','clinica','telefono','direccion']
 		exclude = {'foto'}
 
 

@@ -179,9 +179,10 @@ def RegistrarPaciente(request):
 		p1.device1 = cd.get("device1")
 		p1.save()
 
-		device = Device.objects.get(id =p1.device1.id)
-		device.ocupado = True
-		device.save()
+		if(p1.devide1):
+			device = Device.objects.get(id =p1.device1.id)
+			device.ocupado = True
+			device.save()
 
 		user=User.objects.get(username=instancia)
 		user.first_name = cd.get("nombre")	
@@ -213,8 +214,9 @@ def editPaciente(request, id_prod):
 	else:
 		form = PacienteFormDOC(instance=paciente1)
 		form2 = userForm(instance=user1)
-	context = {'form':form, 'form2':form2,'titulo':titulo}
-	return render_to_response("paciente_edit.html",context,context_instance=RequestContext(request))
+	context = {'form':form, 'form2':form2,'titulo':titulo, 'paciente1':paciente1}
+	# return render_to_response("paciente_edit.html",context,context_instance=RequestContext(request))
+	return render(request, "paciente_edit.html", locals())
 
 
 def editPacientDoc(request, id_prod, model, formulario):
@@ -234,7 +236,7 @@ def editPacientDoc(request, id_prod, model, formulario):
 		form = formulario(instance=item)
 		form2 = userForm(instance=user1)
 	context = {'form':form, 'form2':form2, 'titulo':titulo}
-	return render_to_response("paciente_edit.html",context,context_instance=RequestContext(request))
+	return render(request, "paciente_edit.html", locals())
 
 
 def deletePD(request, id_item, model):

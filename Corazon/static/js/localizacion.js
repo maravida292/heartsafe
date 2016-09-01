@@ -47,8 +47,6 @@ function localizacionPaciente() {
 
                   entra = true;
                   
-
-                  //$( ".result" ).html( data );
                   console.log(data);
               }
         );

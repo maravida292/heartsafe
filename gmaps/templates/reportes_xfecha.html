@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block title %}  Reporte1 {% endblock %}
+
+{% block javascript %}
+    <link href="/static/css/datepicker.css" rel="stylesheet"/>
+    <script src="/static/js/jquery-ui-1.10.2.js"></script>
+    <script src="/static/js/jquery-1.9.1.js"></script>
+    <script src="/static/js/bootstrap-datepicker.js"></script>
+    <link href="/static/css/boton.css" rel="stylesheet" type="text/css" media="screen" />
+
+     <script>
+        $(document).ready(function () {
+            $.noConflict();
+            $('#datepiker').datepicker({ dateFormat: 'yy-mm-dd' });
+            $('#datepiker2').datepicker({ dateFormat: 'yy-mm-dd' });
+            //alert('jQuery is working');
+        });
+    </script>
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+        {#Clase para moviles#}
+                <div class="col-xs-12 col-md-8">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                             Reporte por fecha <br>
+                        </div>
+                        <div class="panel-body">
+                            <div class="well">
+                                <form class="register" id="form_editarVehiculo" method="get">{% csrf_token %}
+                                    Fecha1 : <input class="datepicker" type="text" id="datepiker" name="datepiker">
+
+                                    Fecha2 : <input class="datepicker" type="text" id="datepiker2" name="datepiker2">
+
+                                    <br><br><br>
+                                    <button value="Registrarse" class="button" type="submit">Buscar</button>
+                                </form>
+                            </div>
+
+                            <div class="content table-responsive table-full-width" style="overflow-y:scroll;">
+                                <table class="table table-hover table-striped" id="myTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Día</th>
+                                            <th>Hora</th>
+                                            <th>BPM</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% if pulsos %}
+                                        {%  for item in pulsos %}
+                                            <tr>
+                                                <td>{{item.fecha}}</td>
+                                                <td>{{item.hora}}</td>
+                                                <td>{{item.BPM}}</td>
+                                            </tr>
+                                        {% endfor %}
+                                    {% else %}
+                                        <h4>>  No hay registro de pulsos en ese rango <</h4>
+                                    {% endif %}
+                                    </tbody>
+                                </table>
+                            <br><br><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}
