@@ -31,12 +31,6 @@
                 <div class="card">
 
                     <div class="content">
-                    <div class="container-fluid">
-                    <div class="row-fluid">
-                    <div class="col-md-10">
-                    <div class="card">
-
-
 
                     {#Panel#}
                     <div class="panel panel-default">
@@ -93,7 +87,8 @@
                                                 </td>
                                                 <td> <a href="{% url 'verMapa' item.id  %}" style=cursor:pointer; type="button">  <i class="pe-7s-map-marker" style=cursor:pointer;></i> Ubicación </a></td>
 
-                                                <td> <a href="{% url 'verGrafica' %}" style=cursor:pointer; type="button">  <i class="pe-7s-graph1" style=cursor:pointer;></i> Grafica </a></td>
+                                                <td> <a href="{% url 'verGraficaBPM' %}" style=cursor:pointer; type="button">  <i class="pe-7s-graph1" style=cursor:pointer;></i> Grafica BPM </a></td>
+                                                <td> <a href="{% url 'verGraficaPPG' %}" style=cursor:pointer;>  <i class="pe-7s-graph1" style=cursor:pointer;></i> Grafica PPG </a></td>
 
                                             </tr>
                                             {% endfor%}
@@ -115,7 +110,10 @@
                     </div>
 
 
-                    </div></div></div></div></div>
+                    </div>
+
+                    <br><br><br><br><br><br><br><br><br>
+                    <br><br><br><br><br><br><br><br><br>
 
 
                 </div>

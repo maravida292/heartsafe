@@ -39,13 +39,16 @@ def IndexHome(request):
 def IndexDoctor(request):
 	user = request.user
 	if request.user.is_authenticated():
-		if user.groups.filter(name='Doctores').exists():
+		if user.groups.filter(name='Doctores').exists() or user.groups.filter(name='Doctor_Principal').exists():
 			doc = Doctor.objects.get(id= user.doctor.id)
 			return render(request, "doctor.html", { "doctor" : doc})
 		if user.groups.filter(name='Pacientes').exists():
 			doc = Doctor.objects.get(id = user.paciente.doctor1.id)
 			return render(request, "doctor.html",{ "doctor" : doc})
-	return redirect("administrador")
+		return redirect("administrador")
+	else:
+		return redirect("home")
+
 
 
 def IndexMapa(request):    

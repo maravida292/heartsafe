@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block javascript %}
+    <script src="/static/plugins/modal_jquery/jquery.modal.min.js"></script>
+    <link href="/static/plugins/modal_jquery/jquery.modal.css" rel="stylesheet" >
+    <link href="jquery.modal.min.css" rel="stylesheet">
+{% endblock %}
+
+
+{% block title %}   Prueba{% endblock %}
+
+
+{% block content %}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+
+                    <div class="content">
+{#                        <h1>ESTA ES UNA PRUEBITA XD</h1>#}
+                        <div id="hola">
+                            <p>ESTE ES MI NUEVO MODAL XD JAJAJA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <script>
+     $(function() {
+         $('#hola').modal({
+            fadeDuration: 250,
+            fadeDelay: 1.5
+         });
+{#         setInterval(function () {#}
+{#             $.noConflict();#}
+{#             $.post( "/mapa/api/grafica.dat",{ id_dispo:'12345'},#}
+{##}
+{#                    function( data ) {#}
+{#                        console.log(data);#}
+{#                        //var period = parseInt(data);#}
+{#                    }#}
+{#             );#}
+{#        }, 9000);//CADA 9 seg CONSULTA A LA BASE#}
+     });
+
+
+    </script>
+
+
+{% endblock %}

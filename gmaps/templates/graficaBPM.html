@@ -1,8 +1,21 @@
-/**
- * Created by raquel on 23/07/16.
- */
+{% extends 'base.html' %}
 
-$(function() {
+{% block title %}
+    Grafica
+{% endblock %}
+
+{% block referens %}
+    <script src="/static/js/jquery-1.9.1.js"></script>
+    <script src="/static/plugins/highcharts/highstock4.2.6.js"></script>
+    <script src="/static/plugins/highcharts/exporting.js"></script>
+{% endblock %}
+
+{% block content %}
+
+
+<script>
+
+    $(function() {
             $.noConflict();
             Highcharts.setOptions({
                 global : {
@@ -10,6 +23,7 @@ $(function() {
                 }
             });
 
+            // Create the chart
 
             $('#contenedor').highcharts('StockChart', {
                 chart : {
@@ -26,7 +40,7 @@ $(function() {
                                             series.addPoint([x, y], true, true);
                                         }
                                 );
-                            }, 2000);
+                            }, 5000);
                         }
                     }
                 },
@@ -64,12 +78,17 @@ $(function() {
 
                         for (i = -999; i <= 0; i += 1) {
                             data.push([
-                                2
+                                0
                             ]);
                         }
                         return data;
                     }())
                 }]
+        });
     });
+</script>
 
-});
+
+    <div id="contenedor" style="height: 400px; min-width: 310px"></div>
+
+{% endblock %}

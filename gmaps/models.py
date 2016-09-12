@@ -12,8 +12,7 @@ class Device(models.Model):
 		return  '%s - Codigo: %s' %(self.nombre, self.codigo)
 
 class Pulsos(models.Model):
-	ACCEPTED_FORMATS = ['%Y-%m-%d']
-	device = models.ForeignKey(Device)
+	device = models.ForeignKey(Device, on_delete=models.CASCADE)
 	lat = models.CharField(max_length=80)
 	lng = models.CharField(max_length=80)
 	BPM = models.CharField(max_length=8)
@@ -24,11 +23,13 @@ class Pulsos(models.Model):
 		return 'Pulso - lat: %s, lng: %s del device: %s' %(self.lat, self.lng, self.device.nombre)
 
 class Grafica(models.Model):
-	# pulso = models.OneToOneField(Pulsos)
-	t1 = models.IntegerField(blank=True)
-	t2 = models.IntegerField(blank=True)
-	p1 = models.IntegerField(blank=True)
-	p2 = models.IntegerField(blank=True)
-	IBI = models.IntegerField(blank=True)
+	pulso = models.OneToOneField(Pulsos, null=True, blank=True)
+	valles = models.CharField(max_length=8, blank=True)
+	picos = models.CharField(max_length=8, blank=True)
+	estable = models.CharField(max_length=8, blank=True)
+	periodo = models.CharField(max_length=8, blank=True)#Periodo dado en mili-segundos
+
+	def __unicode__(self):
+		return 'Grafica del device: %s del BPM %s' % (self.pulso.device.nombre, self.pulso.BPM)
 
 

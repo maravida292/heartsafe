@@ -37,12 +37,18 @@
                         <div class="panel-body">
                             <div class="well">
                                 <form class="register" id="form_editarVehiculo" method="get">{% csrf_token %}
-                                    Fecha1 : <input class="datepicker" type="text" id="datepiker" name="datepiker">
 
-                                    Fecha2 : <input class="datepicker" type="text" id="datepiker2" name="datepiker2">
+                                    {% block extraParameters %}     {% endblock %}
+
+                                    Fecha inicio: <input class="datepicker" type="text" id="datepiker" name="datepiker">
+
+                                    Fecha fin: <input class="datepicker" type="text" id="datepiker2" name="datepiker2">
 
                                     <br><br><br>
                                     <button value="Registrarse" class="button" type="submit">Buscar</button>
+
+                                    {% block errors %}      {% endblock %}
+
                                 </form>
                             </div>
 
@@ -65,7 +71,9 @@
                                             </tr>
                                         {% endfor %}
                                     {% else %}
+                                        {% block msj-error %}
                                         <h4>>  No hay registro de pulsos en ese rango <</h4>
+                                        {% endblock %}
                                     {% endif %}
                                     </tbody>
                                 </table>

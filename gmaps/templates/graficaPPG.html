@@ -1,20 +1,22 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Grafica
+    Grafica PPG
 {% endblock %}
 
 {% block referens %}
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <script src="https://code.highcharts.com/stock/highstock.js"></script>
-    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
-
+{#    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>#}
+    <script src="/static/js/jquery-1.9.1.js"></script>
+    <script src="/static/plugins/highcharts/highstock4.2.6.js"></script>
+    <script src="/static/plugins/highcharts/exporting.js"></script>
 {% endblock %}
 
 {% block content %}
 
-    <script type="text/javascript">
-        $(function() {
+
+<script>
+
+    $(function() {
             $.noConflict();
             Highcharts.setOptions({
                 global : {
@@ -23,6 +25,9 @@
             });
 
             // Create the chart
+            // VARIABLES
+            // var valle = 10, pico = 50, estable = 20, periodo = 800;
+
             $('#contenedor').highcharts('StockChart', {
                 chart : {
                     events : {
@@ -30,16 +35,27 @@
                             // set up the updating of the chart each second
                             var series = this.series[0];
                             setInterval(function () {
-                                $.post( "/mapa/api/lps.dat",{ id_dispo:'12345'},
+                                $.post( "/mapa/api/grafica.dat",{ id_dispo:'12345'},
+
                                         function( data ) {
-                                            //$( ".result" ).html( data );
-                                            console.log(data);
-                                            var x = (new Date()).getTime(), // current time
-                                                y = parseInt(data);
-                                            series.addPoint([x, y], true, true);
+                                            console.log(data); //La data se presenta en forma de diccionario
+                                            var period = parseInt(data.periodo);
+                                            var IBI = (period*10); //IBI=8000 mseg
+
+                                            var x = (new Date()).getTime(),
+                                                y = parseInt(data),
+                                                x1 = Math.round((new Date()).getTime()+250),
+                                                x2 = Math.round((new Date()).getTime()+500),
+                                                x3 = Math.round((new Date()).getTime()+IBI);
+
+                                            //Agrego los puntos en la grafica
+                                            series.addPoint([x, parseInt(data.valles)], true, true);
+                                            series.addPoint([x1, parseInt(data.picos)], true, true);
+                                            series.addPoint([x2, parseInt(data.estable)], true, true);
+                                            series.addPoint([x3, parseInt(data.estable)], true, true);
                                         }
                                 );
-                            }, 9000);
+                            }, 9000);//CADA 9 seg CONSULTA A LA BASE
                         }
                     }
                 },
@@ -62,7 +78,7 @@
                 },
 
                 title : {
-                    text : 'Grafica Ritmo Cardiaco'
+                    text : 'Grafica Ritmo Cardiaco - Fotopletismograma'
                 },
 
                 exporting: {
@@ -77,19 +93,17 @@
 
                         for (i = -999; i <= 0; i += 1) {
                             data.push([
-                                2
+                                0
                             ]);
                         }
                         return data;
                     }())
                 }]
+        });
     });
-
-});
-
+</script>
 
 
-    </script>
     <div id="contenedor" style="height: 400px; min-width: 310px"></div>
-{% endblock %}
 
+{% endblock %}

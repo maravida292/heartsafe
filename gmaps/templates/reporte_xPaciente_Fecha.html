@@ -1,0 +1,34 @@
+{% extends 'reportes_xfecha.html' %}
+
+
+{% block extraParameters %}
+
+    Paciente:
+    <select style="width: 40%;height: 40px" name="idpaciente" id="idpaciente" class="register-select"></br>
+        <option value="--------">--------</option>
+
+        {% for item in pacientes %}
+            <option value="{{item.id}}">{{item.usuario.first_name}} {{item.usuario.last_name}} </option>
+        {% endfor %}
+
+    </select></br></br>
+
+
+{% endblock %}
+
+
+{% block errors %}
+     {% if messages %}
+        <div class="col-md-6">
+            {% load bootstrap %}
+            {% for message in messages %}
+                <div class="alert {% if message.tags %}alert-{% if message.tags == "error" %}danger{% else %}{{message.tags}} {% endif %}"{% endif %}> {{ message }} </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}
+
+
+{% block msj-error %}
+    <h4>{{ msj_error }}</h4>
+{% endblock %}
